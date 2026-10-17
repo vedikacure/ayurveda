@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#174f49">
+  <title>Vedikacure Ayurveda - Kidney & GB Stone Care Kit</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    :root {
+      --ink: #203b35;
+      --muted: #657b73;
+      --deep: #174f49;
+      --deep-2: #23665b;
+      --mint: #eaf3ee;
+      --mint-2: #f4f8f5;
+      --gold: #e6d8a9;
+      --line: #dce7e1;
+      --white: #fff;
+      --shadow: 0 24px 70px rgba(29, 67, 55, .10);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background:
+        radial-gradient(ellipse at 8% 5%, rgba(220, 234, 224, .72), transparent 32rem),
+        #f5f5ef;
+      color: var(--ink);
+      min-height: 100vh;
+      padding: 28px 18px;
+    }
+    .page { max-width: 1060px; margin: 0 auto; }
+    .shell {
+      background: var(--white);
+      border: 1px solid rgba(220, 231, 225, .9);
+      border-radius: 26px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .topbar {
+      min-height: 82px;
+      padding: 18px 30px;
+      display: flex; align-items: center; justify-content: space-between; gap: 18px;
+      background: var(--deep); color: white;
+    }
+    .brand { display: flex; align-items: center; gap: 13px; min-width: 0; }
+    .brand-mark {
+      width: 44px; height: 44px; flex: 0 0 44px;
+      border-radius: 14px; display: grid; place-items: center;
+      background: var(--gold); color: var(--deep); font-size: 20px;
+    }
+    .brand-title { font-size: 19px; font-weight: 850; letter-spacing: .055em; }
+    .brand-subtitle { color: #d7e7df; font-size: 12px; margin-top: 4px; }
+    .top-note {
+      display: inline-flex; align-items: center; gap: 8px; white-space: nowrap;
+      padding: 10px 14px; border-radius: 999px; border: 1px solid rgba(255,255,255,.22);
+      color: #f5f8f5; font-size: 12px; font-weight: 650;
+    }
+    .main { padding: 30px; }
+    .hero {
+      display: grid; grid-template-columns: 1fr .88fr; gap: 26px; align-items: stretch;
+    }
+    .intro {
+      min-height: 390px; position: relative; overflow: hidden;
+      border-radius: 22px; padding: 30px;
+      background: linear-gradient(145deg, #edf5ef 0%, #e3eee7 58%, #f7f4e9 100%);
+      display: flex; flex-direction: column; align-items: flex-start;
+    }
+    .intro:after {
+      content: ""; position: absolute; width: 235px; height: 235px; border-radius: 50%;
+      border: 1px solid rgba(35, 102, 91, .13); right: -65px; bottom: -75px;
+      box-shadow: 0 0 0 25px rgba(35,102,91,.035), 0 0 0 52px rgba(35,102,91,.025);
+      pointer-events: none;
+    }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px; border-radius: 999px;
+      padding: 8px 12px; background: rgba(255,255,255,.78); color: var(--deep);
+      border: 1px solid #d8e7dc; font-size: 11px; font-weight: 800; letter-spacing: .08em;
+    }
+    h1 { color: var(--deep); font-size: clamp(29px, 3.2vw, 42px); line-height: 1.12; letter-spacing: -.035em; margin: 24px 0 14px; max-width: 540px; }
+    .intro-copy { color: #526b61; font-size: 15px; line-height: 1.75; max-width: 440px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 25px; position: relative; z-index: 1; }
+    .chip { padding: 10px 12px; border-radius: 12px; background: rgba(255,255,255,.86); border: 1px solid #dce8df; color: #315f50; font-size: 12px; font-weight: 700; }
+    .chip i { margin-right: 6px; color: #58856c; }
+    .intro-foot { margin-top: auto; padding-top: 28px; color: #5c7569; font-size: 12px; position: relative; z-index: 1; }
+    .form-card { border: 1px solid var(--line); border-radius: 22px; padding: 25px; background: #fff; }
+    .form-heading { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 20px; }
+    .form-icon { display: grid; place-items: center; flex: 0 0 42px; height: 42px; border-radius: 13px; background: var(--mint); color: var(--deep); font-size: 17px; }
+    .form-title { color: var(--deep); font-size: 20px; font-weight: 850; letter-spacing: -.02em; }
+    .form-subtitle { margin-top: 5px; color: var(--muted); font-size: 12px; line-height: 1.5; }
+    .timer-banner {
+      display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap;
+      padding: 9px 12px; margin-bottom: 19px; border-radius: 11px;
+      background: #f5f2e5; color: #675b2d; font-size: 12px; font-weight: 750;
+    }
+    .timer-banner span { font-variant-numeric: tabular-nums; background: #fff; border: 1px solid #e8dfc1; padding: 3px 8px; border-radius: 7px; }
+    .input-group { margin-bottom: 13px; }
+    .input-group label { display: block; font-size: 12px; font-weight: 750; color: #38564b; margin-bottom: 6px; }
+    .input-group input, .input-group textarea {
+      width: 100%; border: 1px solid #d8e3dc; background: #fbfdfb; border-radius: 11px;
+      padding: 12px 13px; font: inherit; font-size: 13px; color: var(--ink);
+      outline: none; transition: border-color .2s, box-shadow .2s;
+    }
+    .input-group textarea { resize: vertical; min-height: 76px; }
+    .input-group input::placeholder, .input-group textarea::placeholder { color: #99a9a0; }
+    .input-group input:focus, .input-group textarea:focus { border-color: #5e9681; box-shadow: 0 0 0 3px rgba(94,150,129,.13); }
+    .submit-btn {
+      width: 100%; border: 0; border-radius: 12px; padding: 15px 16px; margin-top: 3px;
+      color: #fff; background: linear-gradient(135deg, #23665b, #174f49);
+      font-size: 14px; font-weight: 850; letter-spacing: .045em; cursor: pointer;
+      box-shadow: 0 9px 20px rgba(23,79,73,.18); transition: transform .2s, box-shadow .2s;
+    }
+    .submit-btn:hover { transform: translateY(-1px); box-shadow: 0 12px 24px rgba(23,79,73,.23); }
+    .submit-btn:disabled { opacity: .7; cursor: wait; transform: none; }
+    .doctor-text { color: var(--deep); text-align: center; font-size: 12px; font-weight: 750; margin-top: 15px; }
+    .footer-note { color: #74867d; text-align: center; font-size: 11px; margin-top: 10px; line-height: 1.5; }
+    .products { margin-top: 27px; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 14px; margin-bottom: 14px; }
+    .section-kicker { color: #638473; font-size: 10px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; margin-bottom: 6px; }
+    h2 { color: var(--deep); font-size: 22px; letter-spacing: -.025em; }
+    .section-caption { color: var(--muted); font-size: 12px; }
+    .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 13px; }
+    .product-card { border: 1px solid var(--line); background: #fcfdfb; border-radius: 16px; padding: 18px; min-height: 140px; }
+    .product-icon { width: 37px; height: 37px; border-radius: 12px; display: grid; place-items: center; color: #477d65; background: var(--mint); margin-bottom: 13px; }
+    .product-card h3 { color: #294c40; font-size: 13px; line-height: 1.45; margin-bottom: 6px; }
+    .product-card p { color: #6b8076; font-size: 12px; line-height: 1.55; }
+    .trust-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 18px; }
+    .trust-item { color: #426a58; background: #f1f6f1; border: 1px solid #e0ebe1; border-radius: 999px; padding: 8px 12px; font-size: 11px; font-weight: 750; }
+    .trust-item i { margin-right: 5px; }
+    .site-footer { padding: 18px 30px; display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; border-top: 1px solid #edf1ed; color: #84938b; font-size: 11px; }
+    .ads-by a { color: #477d65; text-decoration: none; font-weight: 750; }
+    .ads-by a:hover { text-decoration: underline; }
+    @media (min-width: 900px) {
+      .form-card { padding: 26px; }
+      .intro { min-height: 100%; }
+    }
+    @media (max-width: 760px) {
+      body { padding: 12px; }
+      .topbar { padding: 17px 18px; align-items: flex-start; }
+      .brand-title { font-size: 15px; }
+      .brand-subtitle { font-size: 11px; }
+      .top-note { font-size: 10px; padding: 8px 10px; }
+      .main { padding: 16px; }
+      .hero { grid-template-columns: 1fr; gap: 16px; }
+      .intro { min-height: auto; padding: 23px; }
+      h1 { font-size: 32px; margin-top: 20px; }
+      .intro-foot { margin-top: 23px; }
+      .form-card { padding: 20px; }
+      .product-grid { grid-template-columns: 1fr; }
+      .product-card { min-height: 0; display: grid; grid-template-columns: 40px 1fr; column-gap: 12px; align-items: start; }
+      .product-icon { grid-row: span 2; margin-bottom: 0; }
+      .product-card h3 { margin: 2px 0 5px; }
+      .product-card p { grid-column: 2; }
+      .section-head { align-items: flex-start; flex-direction: column; gap: 5px; }
+      .site-footer { padding: 17px 18px; }
+    }
+    @media (max-width: 420px) {
+      body { padding: 7px; }
+      .shell { border-radius: 19px; }
+      .topbar { gap: 8px; padding: 15px 13px; }
+      .brand { gap: 9px; }
+      .brand-mark { width: 36px; height: 36px; flex-basis: 36px; border-radius: 11px; }
+      .brand-title { font-size: 12px; letter-spacing: .025em; }
+      .brand-subtitle { font-size: 10px; }
+      .top-note { white-space: normal; text-align: center; max-width: 100px; line-height: 1.35; }
+      .main { padding: 11px; }
+      .intro { padding: 20px; border-radius: 17px; }
+      h1 { font-size: 29px; }
+      .intro-copy { font-size: 14px; }
+      .form-card { padding: 16px; border-radius: 17px; }
+      .form-title { font-size: 18px; }
+      .chips { gap: 7px; }
+      .chip { font-size: 11px; padding: 9px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="shell">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand-mark"><i class="fa-solid fa-leaf"></i></div>
+          <div>
+            <div class="brand-title">VEDIKACURE AYURVEDA</div>
+            <div class="brand-subtitle">Specialized Ayurvedic Care for Kidney &amp; GB Stone</div>
+          </div>
+        </div>
+        <div class="top-note"><i class="fa-solid fa-box"></i> Cash On Delivery</div>
+      </header>
+
+      <main class="main">
+        <section class="hero">
+          <div class="intro">
+            <div class="eyebrow"><i class="fa-solid fa-seedling"></i> AYURVEDIC PRODUCT RANGE</div>
+            <h1>Kidney &amp; Gallbladder Stone Care Kit</h1>
+            <p class="intro-copy">Explore our Ayurvedic product range and share your details to request an order. Our team will contact you.</p>
+            <div class="chips">
+              <div class="chip"><i class="fa-solid fa-leaf"></i> 100% Ayurvedic</div>
+              <div class="chip"><i class="fa-solid fa-truck-fast"></i> Cash On Delivery</div>
+              <div class="chip"><i class="fa-solid fa-user-doctor"></i> Expert team callback</div>
+            </div>
+            <div class="intro-foot"><i class="fa-solid fa-circle-info"></i> Please enter your correct contact and delivery details in the form.</div>
+          </div>
+
+          <div class="form-card">
+            <div class="form-heading">
+              <div class="form-icon"><i class="fa-solid fa-clipboard-list"></i></div>
+              <div>
+                <div class="form-title">ORDER NOW</div>
+                <div class="form-subtitle">Cash on Delivery · Fill in your details below</div>
+              </div>
+            </div>
+            <div class="timer-banner">
+              <i class="fa-regular fa-clock"></i> Special Discount Ends In: <span id="timer">02:00</span>
+            </div>
+
+            <form id="vedikaForm">
+              <div class="input-group">
+                <label for="customer-name">Aapka Naam (Full Name)*</label>
+                <input id="customer-name" type="text" name="name" placeholder="Naam likhein" autocomplete="name" required>
+              </div>
+              <div class="input-group">
+                <label for="customer-phone">Mobile / WhatsApp Number*</label>
+                <input id="customer-phone" type="tel" name="phone" placeholder="10 digit phone number" pattern="[0-9]{10}" inputmode="numeric" autocomplete="tel" required>
+              </div>
+              <div class="input-group">
+                <label for="customer-address">Full Address (House No., Area, City &amp; Pincode)*</label>
+                <textarea id="customer-address" name="address" rows="3" placeholder="House no., street / area, landmark, city and pincode likhein..." autocomplete="street-address" required></textarea>
+              </div>
+              <button type="submit" class="submit-btn" id="subBtn">SUBMIT NOW <i class="fa-solid fa-arrow-right"></i></button>
+            </form>
+
+            <div class="doctor-text"><i class="fa-solid fa-user-doctor"></i> Our Expert doctors will contact you</div>
+            <div class="footer-note"><i class="fa-solid fa-lock"></i> Aapka data 100% safe aur confidential rahega.</div>
+          </div>
+        </section>
+
+        <section class="products">
+          <div class="section-head">
+            <div>
+              <div class="section-kicker">VEDIKACURE COLLECTION</div>
+              <h2>Our Product Highlights</h2>
+            </div>
+            <div class="section-caption">Explore the products included in our range</div>
+          </div>
+          <div class="product-grid">
+            <article class="product-card">
+              <div class="product-icon"><i class="fa-solid fa-bottle-water"></i></div>
+              <h3>Pittashay Biolive Syrup</h3>
+              <p>Gallbladder &amp; Liver Support</p>
+            </article>
+            <article class="product-card">
+              <div class="product-icon"><i class="fa-solid fa-capsules"></i></div>
+              <h3>GB Stone Capsules</h3>
+              <p>Natural Detox &amp; Cleanse</p>
+            </article>
+            <article class="product-card">
+              <div class="product-icon"><i class="fa-solid fa-mortar-pestle"></i></div>
+              <h3>Olive Kabaz Haran Churan</h3>
+              <p>Acidity &amp; Digestion Reliever</p>
+            </article>
+          </div>
+          <div class="trust-row">
+            <div class="trust-item"><i class="fa-solid fa-leaf"></i> 100% Ayurvedic</div>
+            <div class="trust-item"><i class="fa-solid fa-shield-halved"></i> No Side Effects</div>
+            <div class="trust-item"><i class="fa-solid fa-truck-fast"></i> Cash On Delivery</div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div><i class="fa-solid fa-lock"></i> Aapka data 100% safe aur confidential rahega.</div>
+        <div class="ads-by">
+          <a href="https://wa.me/919209907882?text=Hi%2C%20I%20want%20to%20know%20more%20about%20your%20Advertising%20and%20Marketing%20services." target="_blank" rel="noopener noreferrer">
+            Ads by Theadsguru Advertising and Marketing Agency
+          </a>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    // Existing two-minute countdown retained.
+    let timeInSeconds = 120;
+    const timerElement = document.getElementById('timer');
+    function updateTimer() {
+      const minutes = Math.floor(timeInSeconds / 60);
+      const seconds = Math.floor(timeInSeconds % 60);
+      timerElement.textContent =
+        `${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+      if (timeInSeconds > 0) {
+        timeInSeconds--;
+      } else {
+        timeInSeconds = 120;
+      }
+    }
+    updateTimer();
+    setInterval(updateTimer, 1000);
+
+    // Existing Google Apps Script endpoint retained.
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbywLbQtNfFoq3gwov3mhn90MCC731pmNPzwDgirMxTaYK5WEdLcwHen5H47fdq3cWvW/exec';
+    const form = document.getElementById('vedikaForm');
+    const btn = document.getElementById('subBtn');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+
+      const lastSubmitTime = localStorage.getItem('last_lead_submit_time');
+      const currentTime = new Date().getTime();
+      const twentyFourHours = 24 * 60 * 60 * 1000;
+
+      if (lastSubmitTime && (currentTime - Number(lastSubmitTime) < twentyFourHours)) {
+        alert('You have already submitted the form. Our doctor will contact you within 24 hours!');
+        return;
+      }
+
+      btn.innerHTML = 'SUBMITTING...';
+      btn.disabled = true;
+
+      fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+        .then(() => {
+          localStorage.setItem('last_lead_submit_time', String(currentTime));
+          window.location.href = 'thankyou.html';
+        })
+        .catch(error => {
+          alert('Details submit karne me issue aaya, please firse try karein.');
+          btn.innerHTML = 'SUBMIT NOW <i class="fa-solid fa-arrow-right"></i>';
+          btn.disabled = false;
+        });
+    });
+  </script>
+</body>
+</html>
