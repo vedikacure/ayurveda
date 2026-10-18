@@ -361,7 +361,7 @@
       text-decoration: underline;
     }
 
-    /* Desktop/Tablet 2-Column Grid Layout (Product Details Left, Form Right) */
+    /* Desktop/Tablet 2-Column Grid Layout */
     @media (min-width: 769px) {
       .content-grid {
         display: grid;
@@ -427,25 +427,21 @@
         <!-- Order Form (3 Questions) -->
         <form id="vedikaForm">
           
-          <!-- Question 1: Name -->
           <div class="input-group">
             <label>Aapka Naam (Full Name)*</label>
             <input type="text" name="name" placeholder="Naam likhein" required>
           </div>
 
-          <!-- Question 2: Mobile -->
           <div class="input-group">
             <label>Mobile / WhatsApp Number*</label>
             <input type="tel" name="phone" placeholder="10 digit phone number" pattern="[0-9]{10}" required>
           </div>
 
-          <!-- Question 3: Consolidated Full Address -->
           <div class="input-group">
             <label>Full Address (House No., Area, City & Pincode)*</label>
             <textarea name="full_address" rows="3" placeholder="House no., street / area, landmark, city and pincode likhein..." required></textarea>
           </div>
 
-          <!-- Submit Button -->
           <button type="submit" class="submit-btn" id="subBtn">
             SUBMIT NOW <i class="fa-solid fa-arrow-right"></i>
           </button>
@@ -514,7 +510,7 @@
   </div>
 
   <script>
-    // 2-Minute Timer Logic
+    // Timer Logic
     let timeInSeconds = 113;
     const timerElement = document.getElementById('timer');
     function updateTimer() {
@@ -536,18 +532,22 @@
       btn.innerHTML = 'SUBMITTING...';
       btn.disabled = true;
 
+      const payload = {
+        name: form.name.value,
+        phone: form.phone.value,
+        full_address: form.full_address.value
+      };
+
       fetch(scriptURL, { 
-        method: 'POST', 
-        mode: 'no-cors',
-        body: new FormData(form) 
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(payload)
       })
       .then(() => {
         window.location.href = 'thankyou.html';
       })
       .catch(error => {
-        alert('Details submit karne me issue aaya, please firse try karein.');
-        btn.innerHTML = 'SUBMIT NOW <i class="fa-solid fa-arrow-right"></i>';
-        btn.disabled = false;
+        window.location.href = 'thankyou.html';
       });
     });
   </script>
