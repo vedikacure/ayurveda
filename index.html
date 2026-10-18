@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vedsathi Herbal - Nutrivedá Protein Powder</title>
+  <title>Vedikacure Ayurveda - Kidney & GB Stone Care Kit</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <style>
@@ -15,325 +15,497 @@
     }
 
     body {
-      background: linear-gradient(135deg, #e0f2fe 0%, #ecfdf5 100%);
-      color: #0f172a;
+      background-color: #d1e7dd;
+      color: #1a382b;
       min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 12px;
+      padding: 20px 10px;
     }
 
-    .container {
+    /* Main Container Card */
+    .app-card {
       background: #ffffff;
-      max-width: 460px;
       width: 100%;
+      max-width: 980px;
       border-radius: 20px;
       overflow: hidden;
-      box-shadow: 0 20px 30px -10px rgba(4, 120, 87, 0.15), 0 10px 15px -5px rgba(0, 0, 0, 0.05);
-      border: 1px solid #d1fae5;
+      box-shadow: 0 20px 40px rgba(13, 61, 44, 0.15);
+      border: 1px solid #c3e6cb;
     }
 
-    /* Top Timer Banner */
-    .timer-banner {
-      background: linear-gradient(90deg, #dc2626 0%, #ef4444 100%);
+    /* Top Brand Header Bar */
+    .top-bar {
+      background: #144d37;
       color: #ffffff;
-      text-align: center;
-      padding: 8px 12px;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand-section {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-icon {
+      background: #e6f4ea;
+      color: #144d37;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+
+    .brand-title-group h1 {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      color: #ffffff;
+      text-transform: uppercase;
+    }
+
+    .brand-title-group p {
+      font-size: 11px;
+      opacity: 0.85;
+      font-weight: 400;
+    }
+
+    .cod-badge-top {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Inner 2-Column Content Layout */
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: 24px;
+      gap: 20px;
+      background: #f4f9f6;
+    }
+
+    /* Left Panel: Product Information */
+    .product-panel {
+      background: #e7f3ec;
+      border-radius: 16px;
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 1px solid #d0e7d9;
+    }
+
+    .tag-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #ffffff;
+      color: #144d37;
+      font-size: 10px;
+      font-weight: 800;
+      padding: 5px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      width: fit-content;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    }
+
+    .main-heading {
+      font-size: 28px;
+      font-weight: 800;
+      color: #144d37;
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+
+    .sub-heading {
       font-size: 13px;
+      color: #4a6356;
+      line-height: 1.5;
+      margin-bottom: 24px;
+    }
+
+    .feature-tags-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .feat-tag {
+      background: #ffffff;
+      color: #144d37;
+      font-size: 11px;
       font-weight: 700;
+      padding: 8px 12px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+    }
+
+    .kit-item-list {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 14px;
+      margin-bottom: 20px;
+      border: 1px solid #d0e7d9;
+    }
+
+    .kit-item-list ul {
+      list-style: none;
+    }
+
+    .kit-item-list li {
+      font-size: 12px;
+      color: #234737;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .kit-item-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    .kit-item-list li i {
+      color: #16a34a;
+    }
+
+    .foot-info-text {
+      font-size: 11px;
+      color: #648373;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Right Panel: Order Form */
+    .form-panel {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 24px;
+      border: 1px solid #e2ece6;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    }
+
+    .form-header-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .form-header-icon {
+      background: #e7f3ec;
+      color: #144d37;
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+
+    .form-header-text h2 {
+      font-size: 16px;
+      font-weight: 800;
+      color: #144d37;
+      text-transform: uppercase;
+    }
+
+    .form-header-text p {
+      font-size: 11px;
+      color: #648373;
+    }
+
+    /* Discount Timer Banner */
+    .timer-strip {
+      background: #fdf8eb;
+      border: 1px solid #fce8bd;
+      border-radius: 8px;
+      padding: 8px 12px;
       display: flex;
       justify-content: center;
       align-items: center;
       gap: 8px;
-      letter-spacing: 0.3px;
-    }
-
-    .timer-banner span {
-      background: #ffffff;
-      color: #dc2626;
-      padding: 2px 8px;
-      border-radius: 6px;
-      font-family: monospace;
-      font-size: 14px;
-      font-weight: 800;
-      box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
-    }
-
-    /* Header Section */
-    .header {
-      background: linear-gradient(135deg, #065f46 0%, #047857 100%);
-      padding: 24px 20px;
-      text-align: center;
-      color: white;
-      position: relative;
-    }
-
-    .brand-title {
-      font-size: 26px;
-      font-weight: 900;
-      color: #fbbf24;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 6px;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.15);
-    }
-
-    .header p {
-      font-size: 13.5px;
-      color: #f0fdf4;
-      font-weight: 500;
-      line-height: 1.4;
-    }
-
-    .price-tag {
-      display: inline-block;
-      background: linear-gradient(135deg, #fef08a 0%, #fbbf24 100%);
-      color: #064e3b;
-      font-weight: 900;
-      font-size: 15px;
-      padding: 6px 16px;
-      border-radius: 50px;
-      margin-top: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
-    }
-
-    /* Form Section */
-    .form-box {
-      background: #ffffff;
-      padding: 22px 20px;
-    }
-
-    .form-title {
-      font-size: 14px;
-      font-weight: 800;
-      text-align: center;
+      font-size: 12px;
+      color: #855d10;
+      font-weight: 600;
       margin-bottom: 18px;
-      color: #047857;
-      background: #f0fdf4;
-      padding: 11px;
-      border-radius: 10px;
-      border: 1px solid #bbf7d0;
-      box-shadow: inset 0 1px 2px rgba(0,0,0,0.02);
     }
 
+    .timer-strip span {
+      background: #ffffff;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-family: monospace;
+      font-weight: 800;
+      color: #144d37;
+      border: 1px solid #ebd39c;
+    }
+
+    /* Form Fields */
     .input-group {
-      margin-bottom: 16px;
-      text-align: left;
+      margin-bottom: 14px;
     }
 
     .input-group label {
       display: block;
-      font-size: 12.5px;
+      font-size: 11px;
       font-weight: 700;
-      margin-bottom: 6px;
-      color: #334155;
+      color: #234737;
+      margin-bottom: 5px;
     }
 
-    .input-group input, .input-group textarea {
+    .input-group input,
+    .input-group textarea {
       width: 100%;
-      padding: 12px 14px;
-      border: 1.5px solid #cbd5e1;
-      border-radius: 10px;
-      font-size: 14px;
+      padding: 10px 12px;
+      background: #f8faf9;
+      border: 1px solid #d5e3dc;
+      border-radius: 8px;
+      font-size: 13px;
+      color: #144d37;
       outline: none;
-      background: #f8fafc;
-      color: #0f172a;
-      transition: all 0.2s ease;
+      transition: all 0.2s;
     }
 
-    .input-group input:focus, .input-group textarea:focus {
-      border-color: #10b981;
+    .input-group input:focus,
+    .input-group textarea:focus {
+      border-color: #144d37;
       background: #ffffff;
-      box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.15);
+      box-shadow: 0 0 0 3px rgba(20, 77, 55, 0.1);
     }
 
     .submit-btn {
       width: 100%;
-      padding: 16px;
-      background: linear-gradient(135deg, #059669 0%, #047857 100%);
+      background: #144d37;
       color: #ffffff;
-      font-size: 16.5px;
-      font-weight: 800;
+      padding: 13px;
       border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      box-shadow: 0 6px 16px rgba(5, 150, 105, 0.35);
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
       margin-top: 8px;
-      transition: all 0.2s ease;
+      transition: background 0.2s;
     }
 
     .submit-btn:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 8px 20px rgba(5, 150, 105, 0.45);
+      background: #0d3828;
     }
 
-    .submit-btn:disabled {
-      background: #94a3b8 !important;
-      cursor: not-allowed;
-      box-shadow: none;
-      transform: none;
-    }
-
-    .doctor-text {
-      font-size: 12.5px;
-      color: #047857;
-      font-weight: 700;
+    .doctor-callout {
       text-align: center;
-      margin-top: 14px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #144d37;
+      margin-top: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 6px;
     }
 
-    .footer-note {
+    .privacy-text {
       text-align: center;
-      font-size: 11.5px;
-      color: #64748b;
-      margin-top: 10px;
+      font-size: 10px;
+      color: #7d998b;
+      margin-top: 6px;
     }
 
-    /* Product Highlights Section */
-    .product-box {
-      padding: 20px;
+    .agency-footer {
       text-align: center;
-      background: #f8fafc;
-      border-top: 1px solid #e2e8f0;
-    }
-
-    .badge-container {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-bottom: 14px;
-    }
-
-    .badge {
+      padding: 12px;
       background: #ffffff;
-      color: #047857;
-      font-weight: 700;
-      font-size: 11.5px;
-      padding: 6px 12px;
-      border-radius: 20px;
-      border: 1px solid #a7f3d0;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.03);
-    }
-
-    .highlights {
-      background: #ffffff;
-      border-left: 4px solid #10b981;
-      padding: 14px;
-      text-align: left;
-      font-size: 13px;
-      border-radius: 0 10px 10px 0;
-      border: 1px solid #e2e8f0;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.02);
-    }
-
-    .highlights ul {
-      list-style-type: none;
-    }
-
-    .highlights li {
-      margin-bottom: 8px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: #334155;
-    }
-
-    .highlights li:last-child {
-      margin-bottom: 0;
-    }
-
-    .highlights li i {
-      color: #10b981;
-      font-size: 14px;
-    }
-
-    .ads-by {
+      border-top: 1px solid #e7f3ec;
       font-size: 11px;
       color: #2563eb;
       font-weight: 700;
-      text-align: center;
-      margin-top: 16px;
-      padding-bottom: 2px;
+    }
+
+    .agency-footer a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .agency-footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive Mobile Adjustments */
+    @media (max-width: 768px) {
+      .content-grid {
+        grid-template-columns: 1fr;
+        padding: 14px;
+      }
+      .main-heading {
+        font-size: 22px;
+      }
+      .top-bar {
+        padding: 12px 16px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <div class="timer-banner">
-      <i class="fa-solid fa-clock"></i> Special Offer Ends In: <span id="timer">02:00</span>
+  <div class="app-card">
+    
+    <!-- Top Header Bar -->
+    <div class="top-bar">
+      <div class="brand-section">
+        <div class="brand-icon">
+          <i class="fa-solid fa-leaf"></i>
+        </div>
+        <div class="brand-title-group">
+          <h1>VEDIKACURE AYURVEDA</h1>
+          <p>Specialized Ayurvedic Care for Kidney & GB Stone</p>
+        </div>
+      </div>
+      <div class="cod-badge-top">
+        <i class="fa-solid fa-box"></i> Cash On Delivery
+      </div>
     </div>
 
-    <div class="header">
-      <div class="brand-title">VEDSATHI HERBAL</div>
-      <p>Nutrivedá Protein Powder - Ayurvedic Herbal Nutrition</p>
-      <div class="price-tag">Special Price: ₹799 Only</div>
-    </div>
+    <!-- 2-Column Content Grid -->
+    <div class="content-grid">
+      
+      <!-- Left Column: Product Overview -->
+      <div class="product-panel">
+        <div>
+          <div class="tag-badge">
+            <i class="fa-solid fa-seedling"></i> AYURVEDIC PRODUCT RANGE
+          </div>
 
-    <div class="form-box">
-      <div class="form-title">⚡ ORDER NOW (CASH ON DELIVERY)</div>
+          <h2 class="main-heading">
+            Kidney & Gallbladder Stone Care Kit
+          </h2>
 
-      <form id="vedsathiForm" action="thankyou.html" method="GET">
-        <div class="input-group">
-          <label>Aapka Naam (Full Name)*</label>
-          <input type="text" name="name" placeholder="Naam likhein" required>
+          <p class="sub-heading">
+            Explore our Ayurvedic product range and share your details to request an order. Our team will contact you.
+          </p>
+
+          <div class="feature-tags-group">
+            <div class="feat-tag">
+              <i class="fa-solid fa-leaf" style="color: #16a34a;"></i> 100% Ayurvedic
+            </div>
+            <div class="feat-tag">
+              <i class="fa-solid fa-truck-fast" style="color: #144d37;"></i> Cash On Delivery
+            </div>
+            <div class="feat-tag">
+              <i class="fa-solid fa-user-doctor" style="color: #144d37;"></i> Expert team callback
+            </div>
+          </div>
+
+          <div class="kit-item-list">
+            <ul>
+              <li><i class="fa-solid fa-circle-check"></i> <b>Pittashay Biolive Syrup:</b> Gallbladder & Liver Support</li>
+              <li><i class="fa-solid fa-circle-check"></i> <b>GB Stone Capsules:</b> Natural Detox & Cleanse</li>
+              <li><i class="fa-solid fa-circle-check"></i> <b>Olive Kabaz Haran Churan:</b> Acidity & Digestion Reliever</li>
+            </ul>
+          </div>
         </div>
 
-        <div class="input-group">
-          <label>Mobile / WhatsApp Number*</label>
-          <input type="tel" name="phone" placeholder="10 digit phone number" pattern="[0-9]{10}" required>
+        <div class="foot-info-text">
+          <i class="fa-solid fa-circle-info"></i> Please enter your correct contact and delivery details in the form.
+        </div>
+      </div>
+
+      <!-- Right Column: Order Form -->
+      <div class="form-panel">
+        
+        <div class="form-header-title">
+          <div class="form-header-icon">
+            <i class="fa-solid fa-clipboard-list"></i>
+          </div>
+          <div class="form-header-text">
+            <h2>ORDER NOW</h2>
+            <p>Cash on Delivery • Fill in your details below</p>
+          </div>
         </div>
 
-        <div class="input-group">
-          <label>Pura Pata (Full Address with City & Pincode)*</label>
-          <textarea name="address" rows="3" placeholder="Makan no, Gali / Area, Landmark, City aur Pincode likhein..." required></textarea>
+        <!-- Timer Banner -->
+        <div class="timer-strip">
+          <i class="fa-solid fa-clock"></i> Special Discount Ends In: <span id="timer">01:53</span>
         </div>
 
-        <button type="submit" class="submit-btn" id="subBtn">
-          SUBMIT NOW
-        </button>
-      </form>
+        <!-- Order Form (3 Questions) -->
+        <form id="vedikaForm">
+          
+          <!-- Question 1: Name -->
+          <div class="input-group">
+            <label>Aapka Naam (Full Name)*</label>
+            <input type="text" name="name" placeholder="Naam likhein" required>
+          </div>
 
-      <div class="doctor-text">
-        <i class="fa-solid fa-user-doctor"></i> Our Health Experts will contact you
+          <!-- Question 2: Mobile -->
+          <div class="input-group">
+            <label>Mobile / WhatsApp Number*</label>
+            <input type="tel" name="phone" placeholder="10 digit phone number" pattern="[0-9]{10}" required>
+          </div>
+
+          <!-- Question 3: Consolidated Full Address -->
+          <div class="input-group">
+            <label>Full Address (House No., Area, City & Pincode)*</label>
+            <textarea name="full_address" rows="3" placeholder="House no., street / area, landmark, city and pincode likhein..." required></textarea>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="submit-btn" id="subBtn">
+            SUBMIT NOW <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </form>
+
+        <div class="doctor-callout">
+          <i class="fa-solid fa-user-doctor"></i> Our Expert doctors will contact you
+        </div>
+
+        <div class="privacy-text">
+          <i class="fa-solid fa-lock"></i> Aapka data 100% safe aur confidential rahega.
+        </div>
+
       </div>
 
-      <div class="footer-note">
-        <i class="fa-solid fa-lock"></i> Aapka data 100% safe aur confidential rahega.
-      </div>
     </div>
 
-    <div class="product-box">
-      <div class="badge-container">
-        <span class="badge"><i class="fa-solid fa-leaf"></i> 100% Ayurvedic</span>
-        <span class="badge"><i class="fa-solid fa-vial-circle-check"></i> Lab Tested For Purity</span>
-        <span class="badge"><i class="fa-solid fa-ban"></i> No Added Sugar</span>
-      </div>
-
-      <div class="highlights">
-        <ul>
-          <li><i class="fa-solid fa-circle-check"></i> <b>Muscle Gain & Strength:</b> Helps build natural lean muscle</li>
-          <li><i class="fa-solid fa-circle-check"></i> <b>Stamina & Energy Boost:</b> Keeps you energetic all day</li>
-          <li><i class="fa-solid fa-circle-check"></i> <b>Natural Ayurvedic Herbs:</b> Enriched with Ashwagandha, Safed Musli, Shatavari & Amla</li>
-          <li><i class="fa-solid fa-circle-check"></i> <b>Safe & Pure:</b> Zero harmful chemicals, completely safe for daily use</li>
-        </ul>
-      </div>
-
-      <div class="ads-by">Ads by Theadsguru Advertising and Marketing Agency</div>
+    <!-- Agency Footer -->
+    <div class="agency-footer">
+      <a href="https://wa.me/919209907882?text=Hi%2C%20I%20want%20to%20know%20more%20about%20your%20Advertising%20and%20Marketing%20services." target="_blank">
+        Ads by Theadsguru Advertising and Marketing Agency
+      </a>
     </div>
+
   </div>
 
   <script>
-    // Countdown Timer Logic
-    let timeInSeconds = 120;
+    // 2-Minute Timer Logic
+    let timeInSeconds = 113;
     const timerElement = document.getElementById('timer');
     function updateTimer() {
       const minutes = Math.floor(timeInSeconds / 60);
@@ -342,6 +514,21 @@
       if (timeInSeconds > 0) { timeInSeconds--; } else { timeInSeconds = 120; }
     }
     setInterval(updateTimer, 1000);
+
+    // Form Redirection Script
+    const form = document.getElementById('vedikaForm');
+    const btn = document.getElementById('subBtn');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      btn.innerHTML = 'SUBMITTING...';
+      btn.disabled = true;
+
+      setTimeout(() => {
+        window.location.href = 'thankyou.html';
+      }, 800);
+    });
   </script>
+
 </body>
 </html>
