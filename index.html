@@ -89,7 +89,7 @@
       gap: 6px;
     }
 
-    /* Inner 2-Column Content Layout */
+    /* Inner Content Layout */
     .content-grid {
       display: flex;
       flex-direction: column;
@@ -525,19 +525,30 @@
     }
     setInterval(updateTimer, 1000);
 
-    // Form Redirection Script
+    // Form Submission to Google Sheet
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyxBpZWai67JPY_t4uEskUgCypCW-6d5mAKo7XsubHvG_HNo-nacG3d-p3lUMOd0xWYEg/exec';
     const form = document.getElementById('vedikaForm');
     const btn = document.getElementById('subBtn');
 
     form.addEventListener('submit', e => {
       e.preventDefault();
+
       btn.innerHTML = 'SUBMITTING...';
       btn.disabled = true;
 
-      // Direct redirection after submission
-      setTimeout(() => {
+      fetch(scriptURL, { 
+        method: 'POST', 
+        mode: 'no-cors',
+        body: new FormData(form) 
+      })
+      .then(() => {
         window.location.href = 'thankyou.html';
-      }, 800);
+      })
+      .catch(error => {
+        alert('Details submit karne me issue aaya, please firse try karein.');
+        btn.innerHTML = 'SUBMIT NOW <i class="fa-solid fa-arrow-right"></i>';
+        btn.disabled = false;
+      });
     });
   </script>
 
