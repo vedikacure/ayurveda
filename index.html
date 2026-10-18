@@ -502,7 +502,7 @@
 
     <!-- Agency Footer -->
     <div class="agency-footer">
-      <a href="https://wa.me/919209907882?text=Hi%2C%20I%20want%20to%20know%20more%20about%20your%20Advertising%20and%20Marketing%20services." target="_blank">
+      <a href="https://wa.me/919209907882?text=Hi%2C%20I%20want%20to%20know%20more%20about%20your%20Advertising%20and%marketing%20services." target="_blank">
         Ads by Theadsguru Advertising and Marketing Agency
       </a>
     </div>
@@ -532,21 +532,24 @@
       btn.innerHTML = 'SUBMITTING...';
       btn.disabled = true;
 
-      const payload = {
-        name: form.name.value,
-        phone: form.phone.value,
-        full_address: form.full_address.value
-      };
+      // URLSearchParams data parsing
+      const urlParams = new URLSearchParams();
+      urlParams.append('name', form.name.value);
+      urlParams.append('phone', form.phone.value);
+      urlParams.append('full_address', form.full_address.value);
 
       fetch(scriptURL, { 
         method: 'POST',
-        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-        body: JSON.stringify(payload)
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: urlParams
       })
       .then(() => {
         window.location.href = 'thankyou.html';
       })
       .catch(error => {
+        // Fallback redirect
         window.location.href = 'thankyou.html';
       });
     });
