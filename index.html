@@ -6,6 +6,24 @@
   <title>Vedikacure Ayurveda - Kidney & GB Stone Care Kit</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '4491381374459511');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=4491381374459511&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
   <style>
     * {
       box-sizing: border-box;
@@ -502,7 +520,7 @@
 
     <!-- Agency Footer -->
     <div class="agency-footer">
-      <a href="https://wa.me/919209907882?text=Hi%2C%20I%20want%20to%20know%20more%20about%20your%20Advertising%20and%marketing%20services." target="_blank">
+      <a href="https://wa.me/919209907882?text=Hi%2C%20I%20want%20to%20know%20more%20about%20your%20Advertising%20and%20Marketing%20services." target="_blank">
         Ads by Theadsguru Advertising and Marketing Agency
       </a>
     </div>
@@ -532,7 +550,6 @@
       btn.innerHTML = 'SUBMITTING...';
       btn.disabled = true;
 
-      // URLSearchParams data parsing
       const urlParams = new URLSearchParams();
       urlParams.append('name', form.name.value);
       urlParams.append('phone', form.phone.value);
@@ -549,7 +566,6 @@
         window.location.href = 'thankyou.html';
       })
       .catch(error => {
-        // Fallback redirect
         window.location.href = 'thankyou.html';
       });
     });
