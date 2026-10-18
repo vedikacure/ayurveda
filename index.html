@@ -91,24 +91,35 @@
 
     /* Inner 2-Column Content Layout */
     .content-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      padding: 24px;
-      gap: 20px;
+      display: flex;
+      flex-direction: column;
+      padding: 16px;
+      gap: 16px;
       background: #f4f9f6;
     }
 
-    /* Left Panel: Product Information */
+    /* Mobile First Order: Form First (1), Product Details Second (2) */
+    .form-panel {
+      order: 1;
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 22px;
+      border: 1px solid #e2ece6;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    }
+
     .product-panel {
+      order: 2;
       background: #e7f3ec;
       border-radius: 16px;
-      padding: 28px 24px;
+      padding: 24px 20px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       border: 1px solid #d0e7d9;
     }
 
+    /* Left Panel Styles */
     .tag-badge {
       display: inline-flex;
       align-items: center;
@@ -121,31 +132,31 @@
       border-radius: 20px;
       letter-spacing: 0.8px;
       text-transform: uppercase;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
       width: fit-content;
       box-shadow: 0 2px 4px rgba(0,0,0,0.02);
     }
 
     .main-heading {
-      font-size: 28px;
+      font-size: 24px;
       font-weight: 800;
       color: #144d37;
-      line-height: 1.2;
-      margin-bottom: 14px;
+      line-height: 1.25;
+      margin-bottom: 12px;
     }
 
     .sub-heading {
       font-size: 13px;
       color: #4a6356;
       line-height: 1.5;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
 
     .feature-tags-group {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
 
     .feat-tag {
@@ -165,7 +176,7 @@
       background: #ffffff;
       border-radius: 12px;
       padding: 14px;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
       border: 1px solid #d0e7d9;
     }
 
@@ -176,7 +187,7 @@
     .kit-item-list li {
       font-size: 12px;
       color: #234737;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
       display: flex;
       align-items: center;
       gap: 8px;
@@ -198,20 +209,12 @@
       gap: 6px;
     }
 
-    /* Right Panel: Order Form */
-    .form-panel {
-      background: #ffffff;
-      border-radius: 16px;
-      padding: 24px;
-      border: 1px solid #e2ece6;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
-    }
-
+    /* Form Panel Styles */
     .form-header-title {
       display: flex;
       align-items: center;
       gap: 10px;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
     .form-header-icon {
@@ -251,7 +254,7 @@
       font-size: 12px;
       color: #855d10;
       font-weight: 600;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
     }
 
     .timer-strip span {
@@ -266,7 +269,7 @@
 
     /* Form Fields */
     .input-group {
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
 
     .input-group label {
@@ -312,7 +315,7 @@
       justify-content: center;
       align-items: center;
       gap: 8px;
-      margin-top: 8px;
+      margin-top: 6px;
       transition: background 0.2s;
     }
 
@@ -358,17 +361,24 @@
       text-decoration: underline;
     }
 
-    /* Responsive Mobile Adjustments */
-    @media (max-width: 768px) {
+    /* Desktop/Tablet 2-Column Grid Layout (Product Details Left, Form Right) */
+    @media (min-width: 769px) {
       .content-grid {
-        grid-template-columns: 1fr;
-        padding: 14px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 24px;
+        gap: 20px;
+      }
+      .product-panel {
+        order: 1;
+        padding: 28px 24px;
+      }
+      .form-panel {
+        order: 2;
+        padding: 24px;
       }
       .main-heading {
-        font-size: 22px;
-      }
-      .top-bar {
-        padding: 12px 16px;
+        font-size: 28px;
       }
     }
   </style>
@@ -393,51 +403,10 @@
       </div>
     </div>
 
-    <!-- 2-Column Content Grid -->
+    <!-- Content Area (Mobile: Form First, Desktop: Side by Side) -->
     <div class="content-grid">
       
-      <!-- Left Column: Product Overview -->
-      <div class="product-panel">
-        <div>
-          <div class="tag-badge">
-            <i class="fa-solid fa-seedling"></i> AYURVEDIC PRODUCT RANGE
-          </div>
-
-          <h2 class="main-heading">
-            Kidney & Gallbladder Stone Care Kit
-          </h2>
-
-          <p class="sub-heading">
-            Explore our Ayurvedic product range and share your details to request an order. Our team will contact you.
-          </p>
-
-          <div class="feature-tags-group">
-            <div class="feat-tag">
-              <i class="fa-solid fa-leaf" style="color: #16a34a;"></i> 100% Ayurvedic
-            </div>
-            <div class="feat-tag">
-              <i class="fa-solid fa-truck-fast" style="color: #144d37;"></i> Cash On Delivery
-            </div>
-            <div class="feat-tag">
-              <i class="fa-solid fa-user-doctor" style="color: #144d37;"></i> Expert team callback
-            </div>
-          </div>
-
-          <div class="kit-item-list">
-            <ul>
-              <li><i class="fa-solid fa-circle-check"></i> <b>Pittashay Biolive Syrup:</b> Gallbladder & Liver Support</li>
-              <li><i class="fa-solid fa-circle-check"></i> <b>GB Stone Capsules:</b> Natural Detox & Cleanse</li>
-              <li><i class="fa-solid fa-circle-check"></i> <b>Olive Kabaz Haran Churan:</b> Acidity & Digestion Reliever</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="foot-info-text">
-          <i class="fa-solid fa-circle-info"></i> Please enter your correct contact and delivery details in the form.
-        </div>
-      </div>
-
-      <!-- Right Column: Order Form -->
+      <!-- ORDER FORM (Mobile Pe Top Par Aayega) -->
       <div class="form-panel">
         
         <div class="form-header-title">
@@ -492,6 +461,47 @@
 
       </div>
 
+      <!-- PRODUCT DETAILS (Mobile Pe Form Ke Niche Aayega) -->
+      <div class="product-panel">
+        <div>
+          <div class="tag-badge">
+            <i class="fa-solid fa-seedling"></i> AYURVEDIC PRODUCT RANGE
+          </div>
+
+          <h2 class="main-heading">
+            Kidney & Gallbladder Stone Care Kit
+          </h2>
+
+          <p class="sub-heading">
+            Explore our Ayurvedic product range and share your details to request an order. Our team will contact you.
+          </p>
+
+          <div class="feature-tags-group">
+            <div class="feat-tag">
+              <i class="fa-solid fa-leaf" style="color: #16a34a;"></i> 100% Ayurvedic
+            </div>
+            <div class="feat-tag">
+              <i class="fa-solid fa-truck-fast" style="color: #144d37;"></i> Cash On Delivery
+            </div>
+            <div class="feat-tag">
+              <i class="fa-solid fa-user-doctor" style="color: #144d37;"></i> Expert team callback
+            </div>
+          </div>
+
+          <div class="kit-item-list">
+            <ul>
+              <li><i class="fa-solid fa-circle-check"></i> <b>Pittashay Biolive Syrup:</b> Gallbladder & Liver Support</li>
+              <li><i class="fa-solid fa-circle-check"></i> <b>GB Stone Capsules:</b> Natural Detox & Cleanse</li>
+              <li><i class="fa-solid fa-circle-check"></i> <b>Olive Kabaz Haran Churan:</b> Acidity & Digestion Reliever</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="foot-info-text">
+          <i class="fa-solid fa-circle-info"></i> Please enter your correct contact and delivery details in the form.
+        </div>
+      </div>
+
     </div>
 
     <!-- Agency Footer -->
@@ -524,6 +534,7 @@
       btn.innerHTML = 'SUBMITTING...';
       btn.disabled = true;
 
+      // Direct redirection after submission
       setTimeout(() => {
         window.location.href = 'thankyou.html';
       }, 800);
